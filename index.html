@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Tết Đến</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --red:#8b0000;
+  --gold:#ffd700;
+  --cream:#fff3dc;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family: 'Segoe UI', sans-serif;
+  background:var(--cream);
+  color:#5a1a1a;
+}
+
+/* ===== MENU ===== */
+nav{
+  position:fixed;
+  top:0; left:0;
+  width:100%;
+  background:var(--red);
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  padding:14px 0;
+  z-index:1000;
+}
+nav a{
+  color:var(--gold);
+  text-decoration:none;
+  font-weight:600;
+}
+nav a:hover{opacity:.8}
+
+/* ===== BANNER ===== */
+.banner{
+  position:relative;
+  height:90vh;
+  background:linear-gradient(#a00000,#7a0000);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:60px;
+  overflow:hidden;
+}
+.banner h1{
+  font-size:70px;
+  color:var(--gold);
+  z-index:2;
+}
+.banner p{
+  color:#ffe9a8;
+  text-align:center;
+  margin-top:10px;
+  z-index:2;
+}
+#fireworks{
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.banner-content{
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #ffd700;
+}
+
+.banner-content h1{
+  font-size: 64px;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+}
+
+.banner-content h2{
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.banner-content p{
+  font-size: 16px;
+  color: #ffeaa7;
+}#chu{color:#ffe9a8;
+  text-align:center;
+  margin-top:10px;
+  z-index:2;
+}
+/* ===== SECTION ===== */
+section{
+  max-width:1200px;
+  margin:80px auto;
+  padding:0 20px;
+}
+.box{
+  background:white;
+  border-radius:20px;
+  padding:30px;
+  box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+/* ===== GRID ẢNH ===== */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+.card{
+  background:white;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 6px 20px rgba(0,0,0,.12);
+  transition:.3s;
+  text-align: center;
+}
+.card:hover{transform:translateY(-5px)}
+.card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+.card h3{
+  padding:15px;
+  color:var(--red);
+}
+
+/* ===== HÁI LỘC =====*/
+.hailoc{
+  background:#8b0000;
+  color:white;
+  text-align:center;
+  padding:80px 20px;
+}
+
+.hailoc h2{
+  color:#ffd700;
+  font-size:36px;
+  margin-bottom:10px;
+}
+
+.hailoc p{
+  font-size:18px;
+  margin-bottom:30px;
+}
+
+.lixi{
+  width:100px;
+  height:100px;
+  background:#ff3b3b;
+  margin:0 auto;
+  border-radius:16px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  cursor:pointer;
+  transition:.3s;
+  box-shadow:0 0 25px rgba(255,215,0,.5);
+}
+.lixi{
+  font-size: 80px;
+  cursor: pointer;
+  animation: shake 1.5s infinite;
+}
+.lixi:hover{
+  transform:scale(1.1);
+}
+
+.lixi span{
+  font-size:64px;
+  color:#ffd700;
+  font-weight:bold;
+}
+
+.ketqua{
+  margin-top:30px;
+  font-size:26px;
+  color:#ffd700;
+  min-height:40px;
+}
+@keyframes shake{
+ 0%,100%{transform:rotate(0)}
+ 50%{transform:rotate(8deg)}
+}
+
+/* ===== BÌNH LUẬN ===== */
+form input, form textarea{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border-radius:10px;
+  border:1px solid #ccc;
+}
+button{
+  background:var(--red);
+  color:var(--gold);
+  border:none;
+  padding:12px 25px;
+  border-radius:20px;
+  cursor:pointer;
+}
+button:hover{opacity:.9}
+
+/* ===== FOOTER ===== */
+footer{
+  background:var(--red);
+  color:#ffd;
+  text-align:center;
+  padding:30px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- MENU -->
+<nav>
+  <a href="#home">Trang chủ</a>
+  <a href="#truyenthong">Truyền thống</a>
+  <a href="#amthuc">Ẩm thực</a>
+  <a href="#hailoc">Hái lộc</a>
+  <a href="#binhluan">Bình luận</a>
+</nav>
+
+<!-- BANNER -->
+<div class="banner" id="home">
+  <canvas id="fireworks"></canvas>
+  <div style="text-align:center">
+    <h1>TẾT ĐẾN</h1>
+    <h2 id="chu">TRUYỀN THỐNG – NIỀM VUI – HẠNH PHÚC</h2>
+    <p>Gìn giữ giá trị xưa – Lan tỏa may mắn đầu năm</p>
+  </div>
+</div>
+
+<!-- GIỚI THIỆU -->
+<section class="box">
+  <h2>Ý nghĩa Tết Việt</h2>
+  <p>
+    Tết cổ truyền (Tết Nguyên Đán) là dịp lễ quan trọng nhất, mang đậm bản sắc văn hóa Việt, đánh dấu sự kết thúc năm cũ và khởi đầu năm mới với mong muốn an khang, thịnh vượng. Đây là thời điểm đoàn viên gia đình, tưởng nhớ tổ tiên, thể hiện đạo lý "uống nước nhớ nguồn" và xua đuổi điều không may mắn để đón vận khí mới. 
+  </p>
+</section>
+
+<!-- TRUYỀN THỐNG -->
+<section id="truyenthong">
+  <h2>🌸 Truyền thống</h2>
+  <section class="box">
+      <h3 >Lễ hội</h3>
+      <p>Đây là dịp sum vầy, tưởng nhớ tổ tiên và cầu mong bình an thông qua các hoạt động như gói bánh chưng/bánh tét, lễ chùa, lễ hội truyền thống, hội xuân và chúc Tết.</p>
+  </section>
+  <div class="grid">
+    <div class="card"><img src="1.jpg"><h3>Múa lân</h3></div>
+    <div class="card"><img src="2.jpg"><h3>Lễ chùa</h3></div>
+    <div class="card"><img src="3.jpg"><h3>Gói bánh chưng</h3></div>
+  </div>
+  <section class="box">
+      <h3>Trang phục</h3>
+      <p>Trang phục Tết là sự kết hợp tuyệt vời giữa nét đẹp truyền thống và phong cách hiện đại, với những lựa chọn phổ biến như áo dài cách tân, các set đồ màu sắc tươi sáng (đỏ, vàng, hồng), hay những bộ đồ gia đình đồng bộ.</p>
+  </section>
+  <div class="grid">
+    <div class="card"><img src="12.jpg"><h3>Áo dài nữ</h3></div>
+    <div class="card"><img src="13.jpg"><h3>Áo dài nam</h3></div>
+  </div>
+</section>
+
+<!-- ẨM THỰC -->
+<section id="amthuc">
+  <section class="box">
+    <h2>🍱 Ẩm thực ngày Tết</h2>
+    <p>Ẩm thực ngày Tết Việt Nam mang đậm truyền thống với các món đặc trưng như bánh chưng (miền Bắc), bánh tét (miền Trung, Nam), dưa hành/kiệu, thịt đông, thịt kho tàu và giò lụa. Mâm cỗ ngày Tết thể hiện lòng thành kính tổ tiên, sự sum vầy gia đình, với sự kết hợp hài hòa giữa hương vị béo ngậy và vị chua dịu của đồ muối chua. </p>
+  </section>
+  <div class="grid">
+    <div class="card"><img src="4.jpg"><h3>Bánh chưng</h3></div>
+    <div class="card"><img src="5.jpg"><h3>Mứt</h3></div>
+    <div class="card"><img src="6.jpg"><h3>Thịt kho tàu</h3></div>
+    <div class="card"><img src="7.jpg"><h3>Canh khổ qua</h3></div>
+    <div class="card"><img src="8.jpg"><h3>Dưa hành củ kiệu</h3></div>
+    <div class="card"><img src="9.jpg"><h3>Xôi ngũ sắc</h3></div>
+    <div class="card"><img src="10.jpg"><h3>Gà hấp</h3></div>
+    <div class="card"><img src="11.jpg"><h3>Các loại chả</h3></div>
+  </div>
+</section>
+
+<!-- HÁI LỘC -->
+<section id="hailoc" class="hailoc">
+  <h2>🧧 Hái lộc đầu xuân</h2>
+  <p>Nhấn vào bao lì xì để nhận lộc may mắn đầu năm!</p>
+
+  <div class="lixi" onclick="bocLiXi()">
+    🧧
+  </div>
+  </div>
+
+  <div id="ketqua" class="ketqua"></div>
+</section>
+
+<!-- BÌNH LUẬN -->
+<section id="binhluan" class="box">
+  <h2>💬 Bình luận</h2>
+  <form id="commentForm">
+      <input type="text" name="name" placeholder="Tên" required>
+      <textarea name="message" placeholder="Bình luận" required></textarea>
+      <button type="submit">Gửi</button>
+  </form>
+</section>
+
+<footer>
+  © 2026 | Tết Việt – Gìn giữ truyền thống
+</footer>
+
+<!-- FIREWORKS SCRIPT -->
+<script>
+const canvas = document.getElementById("fireworks");
+const ctx = canvas.getContext("2d");
+
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = document.querySelector(".banner").offsetHeight;
+}
+resize();
+window.addEventListener("resize", resize);
+
+class Particle {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+    this.angle = Math.random() * Math.PI * 2;
+    this.speed = Math.random() * 4 + 1.5;
+    this.life = 90;
+    this.alpha = 1;
+
+    const colors = ["#ffd700", "#ffcc88", "#ff6666"];
+    this.color = colors[Math.floor(Math.random() * colors.length)];
+  }
+
+  update() {
+    this.x += Math.cos(this.angle) * this.speed;
+    this.y += Math.sin(this.angle) * this.speed;
+    this.speed *= 0.96;
+    this.life--;
+    this.alpha = this.life / 90;
+  }
+
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
+    ctx.fillStyle = this.color;
+    ctx.globalAlpha = this.alpha;
+    ctx.shadowBlur = 18;
+    ctx.shadowColor = this.color;
+    ctx.fill();
+    ctx.globalAlpha = 1;
+  }
+}
+
+let particles = [];
+
+function explode(x, y) {
+  for (let i = 0; i < 60; i++) {
+    particles.push(new Particle(x, y));
+  }
+}
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  if (Math.random() < 0.025) {
+    explode(
+      Math.random() * canvas.width,
+      Math.random() * canvas.height * 0.5 + 80
+    );
+  }
+
+  particles.forEach((p, i) => {
+    p.update();
+    p.draw();
+    if (p.life <= 0) particles.splice(i, 1);
+  });
+
+  requestAnimationFrame(animate);
+}
+animate();
+</script>
+
+<--! HÁI LỘC -->
+<script>
+const loiChuc = [
+  "🎉 Được 10 điểm!",
+  "💰 Phát tài phát lộc!",
+  "🌸 Gia đình hạnh phúc!",
+  "📚 Đậu nguyện vọng 1!",
+  "❤️ Bình an cả năm!"
+];
+
+function bocLiXi(){
+  const random = Math.floor(Math.random() * loiChuc.length);
+  const ketqua = document.getElementById("ketqua");
+  ketqua.textContent = loiChuc[random];
+}
+</script>
+
+<!-- EMAILJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  emailjs.init("qYTlq01piGxCmQH6h");
+</script>
+<script>
+document.getElementById("commentForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  emailjs.sendForm(
+    "service_3sa4bvn",
+    "template_lgjfvwb",
+    this
+  ).then(() => {
+    alert("🎉 Đã gửi bình luận!");
+    this.reset();
+  }, () => {
+    alert("❌ Gửi thất bại!");
+  });
+});
+</script>
+
+</body>
+</html>
